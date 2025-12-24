@@ -3,6 +3,8 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/majoalba20/redSocialPeriferiaIT/cmd/initializers"
+	"github.com/majoalba20/redSocialPeriferiaIT/cmd/internal/controllers"
+	"github.com/majoalba20/redSocialPeriferiaIT/cmd/internal/middleware"
 )
 
 func init() {
@@ -13,10 +15,8 @@ func init() {
 
 func main() {
 	r := gin.Default()
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
+	r.POST("/signup", controllers.Signup)
+	r.POST("/login", controllers.Login)
+	r.GET("/validate", middleware.RequireAuth, controllers.Validate)
 	r.Run()
 }
