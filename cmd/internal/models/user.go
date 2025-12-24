@@ -6,4 +6,6 @@ type User struct {
 	gorm.Model
 	Email    string `gorm:"unique"`
 	Password string
+
+	Profile Profile `gorm:"constraint:OnDelete:CASCADE;"`
 }
