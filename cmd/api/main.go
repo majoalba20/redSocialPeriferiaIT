@@ -22,5 +22,6 @@ func main() {
 	r.GET("/profile", middleware.RequireAuth, controllers.GetProfile)
 	r.POST("/post", middleware.RequireAuth, controllers.CreatePost)
 	r.GET("/get/all", middleware.RequireAuth, controllers.GetPostsFeed)
+	r.POST("/posts/:id/like", middleware.RequireAuth, controllers.LikePost)
 	r.Run()
 }
