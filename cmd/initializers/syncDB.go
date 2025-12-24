@@ -5,5 +5,5 @@ import (
 )
 
 func SyncDB() {
-	DB.AutoMigrate(&models.User{}, &models.Profile{})
+	DB.AutoMigrate(&models.User{}, &models.Profile{}, &models.Post{})
 }

@@ -11,4 +11,6 @@ type Profile struct {
 	BirthDate time.Time
 	Bio       string
 	AvatarURL string
+
+	Posts []Post
 }
