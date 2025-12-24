@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	"net/http"
 	"time"
 
@@ -64,5 +65,6 @@ func GetProfile(c *gin.Context) {
 		return
 	}
 
+	fmt.Print(profile)
 	c.JSON(200, profile)
 }
